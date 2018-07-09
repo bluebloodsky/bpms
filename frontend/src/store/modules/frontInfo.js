@@ -1,7 +1,7 @@
 import { TABS_LIST } from '@/shared/constants'
 const state = {
-  tabs: TABS_LIST
-  // tabs: [TABS_LIST[0]]
+  // tabs: TABS_LIST
+  tabs: [TABS_LIST[0]]
 }
 
 const getters = {

@@ -1,11 +1,11 @@
 export const NAV_MENUS = [{
-    name_cn: '项目管理',
+    name_cn: '新建项目',
     icon: 'icon-manage',
     url: 'desktop'
 }, {
     name_cn: '进度查看',
     icon: 'icon-browse',
-    url: 'data'
+    url: 'progress'
 }, {
     name_cn: '日志查看',
     icon: 'icon-order',
@@ -17,5 +17,5 @@ export const NAV_MENUS = [{
 }, {
     name_cn: '用户管理',
     icon: 'icon-group',
-    url: 'config'
+    url: 'user-manage'
 }]

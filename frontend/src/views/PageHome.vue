@@ -8,12 +8,13 @@
             <nav>
                 <ul>
                     <li v-for="(menu,index) in nav_menus" :key="index">
-                        <router-link :to="menu.url">
+                        <a @click="openTab(menu.url)">
                             <i class="iconfont" :class="menu.icon"></i>
                             <br/>{{menu.name_cn}}
-                        </router-link>
+                        </a>
                     </li>
                 </ul>
+                <!--  <PaddleMenu :datas="nav_menus" :callback="openTab"></PaddleMenu> -->
             </nav>
             <div class="right-info">
                 <a> <img src="../assets/user.png"></a>
@@ -41,12 +42,16 @@
     </div>
 </template>
 <script>
+import PaddleMenu from '@/components/PaddleMenu'
 import { Date } from '@/shared/extend'
 import { NAV_MENUS } from '@/json/nav'
 import {
     mapGetters
 } from 'vuex'
 export default {
+    components: {
+        PaddleMenu
+    },
     data() {
         return {
             nav_menus: [],
@@ -242,6 +247,7 @@ header nav a i.iconfont {
 .tab-box>ul a.router-link-active {
     border-bottom: 36px solid #cfdee9;
     color: #3c3c3c;
+    z-index: 3;
 }
 
 .tab-box>ul a:hover::after {
@@ -251,7 +257,6 @@ header nav a i.iconfont {
     top: 1px;
     border-bottom: 35px solid #86b8d5;
     border-right: 17px solid transparent;
-    z-index: 3;
 }
 
 .tab-box>ul a.router-link-active::after {
