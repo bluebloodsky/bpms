@@ -17,7 +17,11 @@
                 <!--  <PaddleMenu :datas="nav_menus" :callback="openTab"></PaddleMenu> -->
             </nav>
             <div class="right-info">
-                <a> <img src="../assets/user.png"></a>
+                <a class="user-info"> <img src="../assets/user.png"></a>
+                <a class="toggle">
+                    <i class="iconfont icon-mail"></i>
+                    <span>10</span>
+                </a>
                 <span> 
           <strong>{{t}}</strong> 
           <br/>
@@ -160,7 +164,7 @@ header nav a i.iconfont {
     align-items: center;
 }
 
-.right-info a {
+.user-info {
     display: inline-block;
     height: 64px;
     width: 64px;
@@ -170,7 +174,7 @@ header nav a i.iconfont {
     margin-right: 20px;
 }
 
-.right-info img {
+.user-info img {
     height: 64px;
 }
 
@@ -182,6 +186,33 @@ header nav a i.iconfont {
 .right-info strong {
     font-size: 22px;
     font-weight: normal;
+}
+
+.toggle {
+    position: relative;
+    display: block;
+    padding-right: 30px;
+    color: #999c9e;
+    height: 60px;
+    line-height: 60px;
+}
+
+.toggle .iconfont {
+    font-size: 30px;
+}
+
+.toggle span {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    line-height: 12px;
+    background-color:#36c6d3;
+    color: #FFF;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 6px;
+    border-radius: 12px;
+    text-align: center;
 }
 
 .tab-box {
