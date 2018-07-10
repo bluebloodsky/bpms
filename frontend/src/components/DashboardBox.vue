@@ -23,7 +23,7 @@ article {
 }
 
 header {
-    font-size: 24px;
+    font-size: 18px;
     color: #3c3c3c;
     height: 30px;
     border-bottom: 2px solid #3c3c3c;

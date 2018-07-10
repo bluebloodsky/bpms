@@ -1,10 +1,10 @@
 <template>
-    <section>
+    <section class="wrapper">
         <div class="box main-box">
             <header>
                 <span>流程图</span>
                 <div class="right-btn">
-                    <button type="text" @click="submit"><i class="iconfont icon-submit"></i></button>
+                    <button type="text" @click="submit"><i class="iconfont icon-right"></i></button>
                 </div>
             </header>
             <section>
@@ -55,7 +55,7 @@
     </section>
 </template>
 <script>
-import { WORKFLOW_STEPS } from '@/shared/constants'
+import { WORKFLOW_STEPS } from '@/json/steps'
 import { copyObject, remove } from '@/shared/util'
 import StepSvg from '@/components/StepSvg'
 import ArrowSvg from '@/components/ArrowSvg'
@@ -329,8 +329,11 @@ export default {
 }
 </script>
 <style scoped>
+.wrapper{
+    padding: 5px 10px;
+}
 .box {
-    border: #ccc 1px solid;
+    border: 1px solid #9c9c9c;
     height: 100%;
     float: left;
     overflow: auto;
@@ -338,23 +341,50 @@ export default {
 }
 
 .main-box {
-    width: 80%;
+    width: calc(100% - 300px);
 }
 
 .right-box {
-    width: 20%;
+    width: 300px;
 }
 
+.box>header {
+  height: 40px;
+  text-align: left;
+  line-height: 40px;
+  font-size: 16px;
+  padding-left: 10px;
+  border-bottom: 1px solid #9c9c9c;
+  background-color: #dfecec;
+}
+
+.box>section{
+    height: calc(100% - 50px);
+    position: relative;
+}
 .flowChart {
     position: relative;
     width: 99%;
-    height: 99%;
+    height: calc(100% - 35px);
+}
+
+.button-group {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    text-align: center;
+    overflow: hidden;
+    width: 80%;
+    height: 30px;
+    display: flex;
+    border: 1px solid #ccc;
 }
 
 .wfcs {
-    position: relative;
+    margin-top: 40px;
+    bottom: 0;
     width: 99%;
-    height: 80%;
+    height: calc(100% - 40px)
 }
 
 .contextmenu {
@@ -384,15 +414,6 @@ export default {
     background-color: #f4e284;
 }
 
-.button-group {
-    margin: 10px auto;
-    text-align: center;
-    overflow: hidden;
-    width: 80%;
-    height: 30px;
-    display: flex;
-    border: 1px solid #ccc;
-}
 
 .button-group button {
     flex: 1;
