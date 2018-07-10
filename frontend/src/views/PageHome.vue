@@ -3,9 +3,9 @@
         <header>
             <div class="logo">
                 <img src="../assets/logo.png">
-                <h1>云服务安全边界管控系统</h1>
             </div>
-            <nav>
+            <h1>云服务安全边界管控系统</h1>
+            <!--             <nav>
                 <ul>
                     <li v-for="(menu,index) in nav_menus" :key="index">
                         <a @click="openTab(menu.url)">
@@ -14,21 +14,40 @@
                         </a>
                     </li>
                 </ul>
-                <!--  <PaddleMenu :datas="nav_menus" :callback="openTab"></PaddleMenu> -->
-            </nav>
+            </nav> -->
             <div class="right-info">
                 <a class="user-info"> <img src="../assets/user.png"></a>
                 <a class="toggle">
                     <i class="iconfont icon-mail"></i>
                     <span>10</span>
                 </a>
-                <span> 
-          <strong>{{t}}</strong> 
-          <br/>
-          {{d}}
-        </span>
+                <div class="time">
+                    <strong>{{t}}</strong>
+                    <br/> {{d}}
+                </div>
             </div>
         </header>
+        <aside>
+            <header>导航</header>
+            <el-menu @select="openTab">
+                <template v-for="(menu,index) in nav_menus">
+                    <el-submenu :index="''+index" v-if="menu.items">
+                        <template slot="title">
+                            <i class="iconfont" :class="menu.icon" v-if="menu.icon"></i>
+                            <span slot="title" class="menu-title">{{menu.name_cn}}</span>
+                        </template>
+                        <el-menu-item :index="sub_menu.url" v-for="(sub_menu,sub_index) in menu.items">
+                            <i class="iconfont" :class="sub_menu.icon" v-if="sub_menu.icon"></i>
+                            <span slot="title" class="menu-title">{{sub_menu.name_cn}}</span>
+                        </el-menu-item>
+                    </el-submenu>
+                    <el-menu-item :index="menu.url" v-else>
+                        <i class="iconfont" :class="menu.icon" v-if="menu.icon"></i>
+                        <span slot="title" class="menu-title">{{menu.name_cn}}</span>
+                    </el-menu-item>
+                </template>
+            </el-menu>
+        </aside>
         <section class="tab-box">
             <ul>
                 <li v-for="(tab,tab_index) in tabs" :key="tab.url">
@@ -119,8 +138,9 @@ export default {
 header {
     height: 70px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 30px;
 }
 
 header nav li {
@@ -178,12 +198,12 @@ header nav a i.iconfont {
     height: 64px;
 }
 
-.right-info span {
+.time {
     color: #8B9DB7;
     font-size: 16px;
 }
 
-.right-info strong {
+.time strong {
     font-size: 22px;
     font-weight: normal;
 }
@@ -206,7 +226,7 @@ header nav a i.iconfont {
     right: 20px;
     top: 10px;
     line-height: 12px;
-    background-color:#36c6d3;
+    background-color: #36c6d3;
     color: #FFF;
     font-size: 10px;
     font-weight: 600;
@@ -215,9 +235,41 @@ header nav a i.iconfont {
     text-align: center;
 }
 
-.tab-box {
+
+/*.el-menu,
+.el-menu--inline{
+    background:transparent;
+    border: none;
+}
+.menu-title{
+    color: #fff;
+}*/
+
+aside {
     position: absolute;
     left: 2px;
+    right: auto;
+    width: 200px;
+    top: 80px;
+    bottom: 2px;
+    background-color: rgb(238, 245, 246);
+    color: #3c3c3c;
+    border: 1px solid #3f6aa1;
+    border-radius: 5px;
+}
+
+aside>header {
+    height: 36px;
+    font-size: 16px;
+    line-height: 36px;
+    position: relative;
+    border-bottom: 1px solid #3f6aa1;
+    padding-left: 20px;
+}
+
+.tab-box {
+    position: absolute;
+    left: 204px;
     right: 2px;
     top: 80px;
     bottom: 2px;

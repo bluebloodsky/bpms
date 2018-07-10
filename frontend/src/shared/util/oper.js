@@ -1,21 +1,21 @@
 
 /* @flow */
 
-export const getRandomInt = (start: Number, end: Number) => {
+export const getRandomInt = (start, end) => {
   return start + Math.floor(Math.random() * (end - start))
 }
-export const getRandomFloat = (start: Number, end: Number, fixed: Number = 2) => {
+export const getRandomFloat = (start, end, fixed = 2) => {
   return (start + Math.random() * (end - start)).toFixed(fixed)
 }
 
-export const copyObject = (source: Object | Array < * > ) => {
+export const copyObject = (source ) => {
   return JSON.parse(JSON.stringify(source))
 }
 
 /**
  * Remove an item from an array
  */
-export const remove = (arr: Array < any > , item: any) => {
+export const remove = (arr , item) => {
   if (arr.length) {
     const index = arr.findIndex(it => {
       return JSON.stringify(it) == JSON.stringify(item)
@@ -26,7 +26,7 @@ export const remove = (arr: Array < any > , item: any) => {
   }
 }
 
-export const rollbackMap = (source: Object | Array, logContents: Object | Array) => {
+export const rollbackMap = (source, logContents) => {
   for ( let k in logContents){
     if (logContents[k].type == 'add') {
       if (Array.isArray(source)) {
@@ -42,7 +42,7 @@ export const rollbackMap = (source: Object | Array, logContents: Object | Array)
   }
 }
 
-export const rollbackList = (source: Array, logContents: Array) => {
+export const rollbackList = (source, logContents) => {
   logContents.map(log => {
     if (log.type == 'add') {
       remove(source, log.newvalue)
@@ -52,7 +52,7 @@ export const rollbackList = (source: Array, logContents: Array) => {
   })
 }
 
-export const mixObject = (_to: Object, _from: Object) => {
+export const mixObject = (_to, _from) => {
   for (const key in _from) {
     if (_to.hasOwnProperty(key)) {
       if (typeof _from[key] === 'object' && !Array.isArray(_from[key])) {

@@ -1,6 +1,6 @@
-/* @flow */
 
-export const binaraySearch = (key: Number, arr: Array) => {
+
+export const binaraySearch = (key, arr) => {
   let lo = 0
   let hi = arr.length - 1
   while(lo <= hi){

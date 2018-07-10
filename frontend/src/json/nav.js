@@ -1,11 +1,13 @@
 export const NAV_MENUS = [{
-    name_cn: '新建项目',
+    name_cn: '项目管理',
     icon: 'icon-manage',
-    url: 'desktop'
-}, {
-    name_cn: '进度查看',
-    icon: 'icon-browse',
-    url: 'progress'
+    items: [{
+        name_cn: '新建项目',
+        url: 'create-pro'
+    }, {
+        name_cn: '进度查看',
+        url: 'progress'
+    }]
 }, {
     name_cn: '日志查看',
     icon: 'icon-order',
@@ -13,9 +15,21 @@ export const NAV_MENUS = [{
 }, {
     name_cn: '信息配置',
     icon: 'icon-setup',
-    url: 'config'
+    items: [{
+        name_cn: '流程配置',
+        url: 'process-edit'
+    }, {
+        name_cn: '属性配置',
+        url: 'attr-config',
+    }]
 }, {
-    name_cn: '用户管理',
+    name_cn: '权限管理',
     icon: 'icon-group',
-    url: 'user-manage'
+    items: [{
+        name_cn: '用户管理',
+        url: 'user-manage'
+    }, {
+        name_cn: '角色管理',
+        url: 'role-manage',
+    }]
 }]
