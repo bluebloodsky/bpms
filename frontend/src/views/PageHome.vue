@@ -79,6 +79,11 @@ export default {
       this.dt = new Date()
     }, 1000)
 
+    let r = this.$route.path.match(/\/home\/(\S+)/)
+    if (r && r.length > 1) {
+      let tab_url = r[1]
+      this.$store.commit('addTab', tab_url)
+    }
   },
   computed: {
     t() {
@@ -133,7 +138,7 @@ header {
   padding: 0 30px;
 }
 
-h1{
+h1 {
   color: #fff;
 }
 
@@ -228,6 +233,7 @@ header nav a i.iconfont {
   border-radius: 12px;
   text-align: center;
 }
+
 
 
 

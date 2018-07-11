@@ -4,10 +4,10 @@
       <li v-for="i in 4" :key="i">
         <span>项目{{i}}</span>
         <section>
-          <!-- <zl-steps :active="active" :steps="steps"></zl-steps> -->
-          <el-steps :active="active" finish-status="success">
+          <zl-steps :active="i-1" :steps="steps"></zl-steps>
+         <!--  <el-steps :active="active" finish-status="success">
             <el-step :title="step.name_cn" v-for="step in steps" :key="step.name"></el-step>
-          </el-steps>
+          </el-steps> -->
         </section>
       </li>
     </ul>
