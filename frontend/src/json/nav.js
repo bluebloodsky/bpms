@@ -3,10 +3,13 @@ export const NAV_MENUS = [{
     icon: 'icon-manage',
     items: [{
         name_cn: '新建项目',
-        url: 'create-pro'
+        url: 'project-create'
     }, {
         name_cn: '进度查看',
         url: 'progress'
+    }, {
+        name_cn: '现场监控',
+        url: 'station-monitor'
     }]
 }, {
     name_cn: '日志查看',

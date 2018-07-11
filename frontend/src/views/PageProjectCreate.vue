@@ -28,7 +28,7 @@ import { BASE_ATTRS } from '@/json/attr'
 
 import { PRO_PERSON_ATTRS } from '@/json/attr'
 export default {
-  name: 'PageCreatePro',
+  name: 'PageProjectCreate',
   components: { AttrRender },
   data() {
     return {
@@ -52,9 +52,9 @@ export default {
 }
 
 .box>header {
-  height: 40px;
+  height: 35px;
   text-align: left;
-  line-height: 40px;
+  line-height: 35px;
   font-size: 16px;
   padding-left: 10px;
   border-bottom: 1px solid #9c9c9c;

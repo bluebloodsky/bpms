@@ -32,6 +32,6 @@ header {
 
 section {
     width: 100%;
-    height: calc(100% - 130px);
+    height: calc(100% - 40px);
 }
 </style>

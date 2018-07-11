@@ -5,12 +5,15 @@ import PageHome from '@/views/PageHome'
 import PageNotFind from '@/views/PageNotFind'
 import PageDeskTop from '@/views/PageDeskTop'
 import PageProgress from '@/views/PageProgress'
+import PageStationMonitor from '@/views/PageStationMonitor'
 import PageLog from '@/views/PageLog'
 import PageUserManage from '@/views/PageUserManage'
 import PageAttrConfig from '@/views/PageAttrConfig'
 import PageRoleManage from '@/views/PageRoleManage'
-import PageCreatePro from '@/views/PageCreatePro'
+import PageProjectCreate from '@/views/PageProjectCreate'
 import PageProcessEdit from '@/views/PageProcessEdit'
+import PageProcessHandle from '@/views/PageProcessHandle'
+
 
 Vue.use(Router)
 
@@ -30,11 +33,17 @@ export default new Router({
             path: 'desktop',
             component: PageDeskTop
         }, {
-            path: 'create-pro',
-            component: PageCreatePro
+            path: 'project-create',
+            component: PageProjectCreate
+        }, {
+            path: 'process-handle',
+            component: PageProcessHandle
         }, {
             path: 'progress',
             component: PageProgress
+        }, {
+            path: 'station-monitor',
+            component:PageStationMonitor 
         }, {
             path: 'process-edit',
             component: PageProcessEdit
