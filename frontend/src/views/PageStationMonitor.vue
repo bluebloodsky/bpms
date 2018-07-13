@@ -3,11 +3,14 @@
     <DashboardBox title="gis分布">
       <Gis></Gis>
     </DashboardBox>
-    <DashboardBox title="现场实时状况">
+    <DashboardBox title="实时轨迹显示">
       <Scene></Scene>
     </DashboardBox>
-    <DashboardBox title="现场信息统计">
-      
+    <DashboardBox title="现场工作人员信息">
+      <UserInfo></UserInfo>
+    </DashboardBox>
+     <DashboardBox title="实时告警信息">
+      <EventInfo></EventInfo>
     </DashboardBox>
   </section>
 </template>
@@ -15,8 +18,10 @@
 import DashboardBox from '@/components/DashboardBox';
 import Gis from '@/components/station/Gis'
 import Scene from '@/components/station/Scene'
+import UserInfo from '@/components/station/UserInfo'
+import EventInfo from '@/components/station/EventInfo'
 export default {
-  components: { DashboardBox, Gis ,Scene},
+  components: { DashboardBox, Gis ,Scene ,UserInfo , EventInfo},
 
 }
 </script>
@@ -42,6 +47,14 @@ export default {
   left: 60%;
   top: 0;
   width: 40%;
-  height: 100%;
+  height: 40%;
+}
+
+.wrapper article:nth-child(4) {
+  position: absolute;
+  left: 60%;
+  top: 40%;
+  width: 40%;
+  height: 60%;
 }
 </style>

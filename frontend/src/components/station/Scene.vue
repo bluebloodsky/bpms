@@ -1,6 +1,6 @@
 <template>
   <section class="wrapper">
-    <img src="@/assets/section.png">
+    <img src="../../assets/station.jpg">
     <div :style="{ left:person.positionX + '%' , top:person.positionY  + '%'}" v-for="person in persons">
       <button type="text">
         <i class="iconfont icon-circle"></i>

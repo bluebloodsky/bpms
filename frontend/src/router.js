@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import PageLogin from '@/views/PageLogin'
+
 import PageHome from '@/views/PageHome'
 import PageNotFind from '@/views/PageNotFind'
 import PageDeskTop from '@/views/PageDeskTop'
@@ -18,50 +20,53 @@ import PageProcessHandle from '@/views/PageProcessHandle'
 Vue.use(Router)
 
 export default new Router({
-    routes: [{
-        path: '/',
-        redirect: '/home',
+  routes: [{
+    path: '/',
+    redirect: '/home',
+  }, {
+    path: '/login',
+    component: PageLogin
+  }, {
+    path: '/home',
+    name: 'home',
+    redirect: '/home/desktop',
+    component: PageHome,
+    children: [{
+      path: 'not-find',
+      component: PageNotFind
     }, {
-        path: '/home',
-        name: 'home',
-        redirect: '/home/desktop',
-        component: PageHome,
-        children: [{
-            path: 'not-find',
-            component: PageNotFind
-        }, {
-            path: 'desktop',
-            component: PageDeskTop
-        }, {
-            path: 'project-create',
-            component: PageProjectCreate
-        }, {
-            path: 'process-handle',
-            component: PageProcessHandle
-        }, {
-            path: 'progress',
-            component: PageProgress
-        }, {
-            path: 'station-monitor',
-            component:PageStationMonitor 
-        }, {
-            path: 'process-edit',
-            component: PageProcessEdit
-        }, {
-            path: 'log',
-            component: PageLog
-        }, {
-            path: 'attr-config',
-            component: PageAttrConfig
-        }, {
-            path: 'log',
-            component: PageLog
-        }, {
-            path: 'role-manage',
-            component: PageRoleManage
-        }, {
-            path: 'user-manage',
-            component: PageUserManage
-        }]
+      path: 'desktop',
+      component: PageDeskTop
+    }, {
+      path: 'project-create',
+      component: PageProjectCreate
+    }, {
+      path: 'process-handle',
+      component: PageProcessHandle
+    }, {
+      path: 'progress',
+      component: PageProgress
+    }, {
+      path: 'station-monitor',
+      component: PageStationMonitor
+    }, {
+      path: 'process-edit',
+      component: PageProcessEdit
+    }, {
+      path: 'log',
+      component: PageLog
+    }, {
+      path: 'attr-config',
+      component: PageAttrConfig
+    }, {
+      path: 'log',
+      component: PageLog
+    }, {
+      path: 'role-manage',
+      component: PageRoleManage
+    }, {
+      path: 'user-manage',
+      component: PageUserManage
     }]
+  }]
 })

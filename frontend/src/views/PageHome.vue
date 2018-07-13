@@ -15,6 +15,7 @@
           <strong>{{t}}</strong>
           <br/> {{d}}
         </div>
+        <a href="#/login" class="exit"> <i class="iconfont icon-exit"></i></a>
       </div>
     </header>
     <aside>
@@ -234,18 +235,11 @@ header nav a i.iconfont {
   text-align: center;
 }
 
-
-
-
-
-/*.el-menu,
-.el-menu--inline{
-    background:transparent;
-    border: none;
+.exit .iconfont {
+  font-size: 30px;
+  padding-left: 30px;
+  color: #999c9e;
 }
-.menu-title{
-    color: #fff;
-}*/
 
 aside {
   position: absolute;
