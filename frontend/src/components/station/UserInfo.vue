@@ -40,7 +40,7 @@ export default {
   height: 100%;
   position: relative;
   background-color: #0A2C4F;
-  color: #fff;
+  color: #8F8C9F;
 }
 
 .wrapper>ul {

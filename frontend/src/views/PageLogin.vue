@@ -1,12 +1,13 @@
 <template>
   <section>
+    <h2>云服务安全边界管控系统</h2>
     <div class="info">
       <span>用户名</span>
       <input v-model="userName" placeholder="请输入用户名">
     </div>
     <div class="info">
       <span>密码</span>
-      <input v-model="password" placeholder="请输入用户名" type="password">
+      <input v-model="password" placeholder="请输入密码" type="password">
     </div>
     <div class="btns" @click="login">
       <button class="button-primary">登录</button>
@@ -31,10 +32,10 @@ export default {
 <style scoped>
 section {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  width: 300px;
-  height: 200px;
+  width: 400px;
+  height: 300px;
   transform: translate(-50%, -50%);
   font-size: 20px;
   line-height: 20px;
@@ -58,8 +59,6 @@ section {
   top: 50%;
   left: 50px;
   transform: translateY(-50%);
-  width: 150px;
-  /*Flex布局*/
   text-align: left;
   font-size: 18px;
 }
@@ -67,6 +66,7 @@ section {
 input {
   height: 30px;
   padding-left: 5px;
+  font-size: 16px;
 }
 
 .btns {

@@ -12,6 +12,7 @@ export default {
   data() {
     return {
       map: null,
+      top : 5,
       events: [{
         event_time: '2017-06-02 11:00:00',
         event_level: 'info',
@@ -46,7 +47,6 @@ export default {
   height: 100%;
   position: relative;
   background-color: #0A2C4F;
-  color: #fff;
 }
 
 ul {

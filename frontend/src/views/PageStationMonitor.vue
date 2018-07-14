@@ -1,7 +1,7 @@
 <template>
   <section class="wrapper">
     <DashboardBox title="gis分布">
-      <Gis></Gis>
+      <!-- <Gis></Gis> -->
     </DashboardBox>
     <DashboardBox title="实时轨迹显示">
       <Scene></Scene>
